@@ -2,37 +2,65 @@ public class FiniteAutomata {
 
     public static void main(String[] args) {
 
-        int[][] machineConfig = new int[6][3];
-        int[] acceptingStates = {3,5};
-        machineConfig[0][0] = 2;
-        machineConfig[0][1] = 4;
-        machineConfig[0][2] = 6;
+//        *********************************
+//        ********     Part #1     ********
+//        *********************************
 
-        machineConfig[1][0] = 3;
-        machineConfig[1][1] = 4;
-        machineConfig[1][2] = 2;
+        int[][] finAuto1_table = new int[6][3];
+        int[] finAuto1_acceptStates = {3,5};
+        finAuto1_table[0][0] = 2;
+        finAuto1_table[0][1] = 4;
+        finAuto1_table[0][2] = 6;
 
-        machineConfig[2][0] = 4;
-        machineConfig[2][1] = 2;
-        machineConfig[2][2] = 2;
+        finAuto1_table[1][0] = 3;
+        finAuto1_table[1][1] = 4;
+        finAuto1_table[1][2] = 2;
 
-        machineConfig[3][0] = 3;
-        machineConfig[3][1] = 1;
-        machineConfig[3][2] = 5;
+        finAuto1_table[2][0] = 4;
+        finAuto1_table[2][1] = 2;
+        finAuto1_table[2][2] = 2;
 
-        machineConfig[4][0] = 1;
-        machineConfig[4][1] = 4;
-        machineConfig[4][2] = 6;
+        finAuto1_table[3][0] = 3;
+        finAuto1_table[3][1] = 1;
+        finAuto1_table[3][2] = 5;
 
-        machineConfig[5][0] = 1;
-        machineConfig[5][1] = 5;
-        machineConfig[5][2] = 4;
+        finAuto1_table[4][0] = 1;
+        finAuto1_table[4][1] = 4;
+        finAuto1_table[4][2] = 6;
+
+        finAuto1_table[5][0] = 1;
+        finAuto1_table[5][1] = 5;
+        finAuto1_table[5][2] = 4;
 
 
-        if (RunProgram(machineConfig, "cabcabbc", 4, acceptingStates)) {
+        if (RunProgram(finAuto1_table, "cabcabbc", 4, finAuto1_acceptStates)) {
             System.out.println("The program ended in an accepting state!");
         } else {
             System.out.println("The program did not end in an accepting state!");
+        }
+
+//        *********************************
+//        ********     Part #2     ********
+//        *********************************
+
+        int[][] finAuto2_table = new int[4][2];
+        int[] finAuto2_acceptStates = {3};
+        finAuto1_table[0][0] = 2;
+        finAuto1_table[0][1] = 4;
+
+        finAuto1_table[1][0] = 3;
+        finAuto1_table[1][1] = 3;
+
+        finAuto1_table[2][0] = 3;
+        finAuto1_table[2][1] = 3;
+
+        finAuto1_table[3][0] = 4;
+        finAuto1_table[3][1] = 4;
+
+        String javaVariable = "java_var";
+
+        for (char c:javaVariable.toCharArray()) {
+            if ()
         }
 
     }
