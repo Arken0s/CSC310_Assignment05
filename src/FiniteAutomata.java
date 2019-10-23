@@ -58,7 +58,7 @@ public class FiniteAutomata {
             System.out.println("Type the string of a-b-c's you'd like to test and press enter:");
             machineInput = kb.next();
             System.out.println("**********************");
-            if (RunProgram(finAuto1_table, machineInput, 1, finAuto1_acceptStates)) {
+            if (RunProgram(finAuto1_table, machineInput, 4, finAuto1_acceptStates)) {
                 System.out.println(machineInput + " ended in an accepting state!");
             } else {
                 System.out.println(machineInput + " did not end in an accepting state!");
@@ -109,7 +109,7 @@ public class FiniteAutomata {
     public static String ConvertVariable (String javaVariable) { // Converts a string input into 3 input classes: [a-zA-Z&_] = a | [0-9] = b | [any other symbol] = c
         String convertedInput = "";
 
-        for (char c:javaVariable.toCharArray()) {
+        for (char c:javaVariable.toCharArray()) { // I understand that appending strings to each other using '+' is not good practice, but used it here due to the simplicity of this program.
             int charASCII = c;
             if (    ((charASCII >= 65) && (charASCII <= 90)) ||
                     ((charASCII >= 97) && (charASCII <= 122)) ||
