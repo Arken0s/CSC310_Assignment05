@@ -106,7 +106,7 @@ public class FiniteAutomata {
         }
     }
 
-    public static String ConvertVariable (String javaVariable) { // Converts any input into 3 input classes: [a-zA-Z&_] a | [0-9] = b | [any other symbol] = c
+    public static String ConvertVariable (String javaVariable) { // Converts any input into 3 input classes: [a-zA-Z&_] = a | [0-9] = b | [any other symbol] = c
         String convertedInput = "";
 
         for (char c:javaVariable.toCharArray()) {
