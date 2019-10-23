@@ -3,11 +3,26 @@ import java.util.Scanner;
 public class FiniteAutomata {
 
     public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
+        System.out.println("Please enter '1' for question 1, '2' for question 2, or anything else to quit, then press enter:");
+        int userChoice = Integer.parseInt(kb.next());
+        Boolean runProgram = true;
 
-//        *********************************
-//        ********     Part #1     ********
-//        *********************************
-/*
+        while (runProgram) {
+            if (userChoice == 1) {
+                question1();
+            } else if (userChoice == 2) {
+                question2();
+            } else {
+                System.out.println("Quitting!");
+                runProgram = false;
+            }
+        }
+    }
+
+
+    public static void question1 (){
+        // DEFINE AND BUILT TABLE
         int[][] finAuto1_table = new int[6][3];
         int[] finAuto1_acceptStates = {3,5};
         finAuto1_table[0][0] = 2;
@@ -34,17 +49,32 @@ public class FiniteAutomata {
         finAuto1_table[5][1] = 5;
         finAuto1_table[5][2] = 4;
 
+        // GATHER INPUT FROM USER AND TEST
+        Scanner kb = new Scanner(System.in);
+        String machineInput;
 
-        if (RunProgram(finAuto1_table, "cabcabbc", 4, finAuto1_acceptStates)) {
-            System.out.println("The program ended in an accepting state!");
-        } else {
-            System.out.println("The program did not end in an accepting state!");
+        while (true) {
+            System.out.println("Question 1:");
+            System.out.println("Type the string of a-b-c's you'd like to test and press enter:");
+            machineInput = kb.next();
+            System.out.println("**********************");
+            if (RunProgram(finAuto1_table, machineInput, 1, finAuto1_acceptStates)) {
+                System.out.println(machineInput + " ended in an accepting state!");
+            } else {
+                System.out.println(machineInput + " did not end in an accepting state!");
+            }
+            System.out.println("**********************");
         }
-*/
-//        *********************************
-//        ********     Part #2     ********
-//        *********************************
 
+//        if (RunProgram(finAuto1_table, "cabcabbc", 4, finAuto1_acceptStates)) {
+//            System.out.println("The program ended in an accepting state!");
+//        } else {
+//            System.out.println("The program did not end in an accepting state!");
+//        }
+    }
+
+    public static void question2 (){
+        // DEFINE AND BUILT TABLE
         int[][] finAuto2_table = new int[4][3];
         int[] finAuto2_acceptStates = {3};
 
@@ -64,17 +94,19 @@ public class FiniteAutomata {
         finAuto2_table[3][1] = 4;
         finAuto2_table[3][2] = 4;
 
+        // GATHER INPUT FROM USER AND TEST
         Scanner kb = new Scanner(System.in);
         String javaVariable;
 
         while (true) {
+            System.out.println("Question 2:");
             System.out.println("Type the word you'd like to test and press enter:");
             javaVariable = kb.next();
             System.out.println("**********************");
             if (RunProgram(finAuto2_table, ConvertVariable(javaVariable), 1, finAuto2_acceptStates)) {
-                System.out.println("The program ended in an accepting state!");
+                System.out.println(javaVariable + " ended in an accepting state!");
             } else {
-                System.out.println("The program did not end in an accepting state!");
+                System.out.println(javaVariable + " did not end in an accepting state!");
             }
             System.out.println("**********************");
         }
