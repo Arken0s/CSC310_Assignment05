@@ -6,7 +6,7 @@ public class FiniteAutomata {
         Scanner kb = new Scanner(System.in);
         System.out.println("Please enter '1' for question 1, '2' for question 2, or anything else to quit, then press enter:");
         int userChoice = Integer.parseInt(kb.next());
-        Boolean runProgram = true;
+        boolean runProgram = true;
 
         while (runProgram) {
             if (userChoice == 1) {
@@ -106,7 +106,7 @@ public class FiniteAutomata {
         }
     }
 
-    public static String ConvertVariable (String javaVariable) { // Converts any input into 3 input classes: [a-zA-Z&_] = a | [0-9] = b | [any other symbol] = c
+    public static String ConvertVariable (String javaVariable) { // Converts a string input into 3 input classes: [a-zA-Z&_] = a | [0-9] = b | [any other symbol] = c
         String convertedInput = "";
 
         for (char c:javaVariable.toCharArray()) {
@@ -127,7 +127,7 @@ public class FiniteAutomata {
 
     public static Boolean RunProgram(int[][] stateTable, String inputWord, int initialState, int[] acceptingStates) {
         int currentState = initialState;
-        Boolean validEntry = false;
+        boolean validEntry = false;
 
 
         for (char inputChar:inputWord.toCharArray()) {
