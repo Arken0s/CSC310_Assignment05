@@ -65,12 +65,6 @@ public class FiniteAutomata {
             }
             System.out.println("**********************");
         }
-
-//        if (RunProgram(finAuto1_table, "cabcabbc", 4, finAuto1_acceptStates)) {
-//            System.out.println("The program ended in an accepting state!");
-//        } else {
-//            System.out.println("The program did not end in an accepting state!");
-//        }
     }
 
     public static void question2 (){
@@ -138,7 +132,6 @@ public class FiniteAutomata {
 
         for (char inputChar:inputWord.toCharArray()) {
             int symbol = (int)inputChar - (int)'a'; //Convert character to int by subtracting a's ASCII value from the characters value. a = 0, b = 1, c = 2, ...
-//            System.out.println("current state: " + currentState + ". Symbol: " + symbol);
             currentState = stateTable[currentState - 1][symbol];
         }
 
